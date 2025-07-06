@@ -1,5 +1,4 @@
 import React from "react";
-import banner from "/cyber.png";
 
 function Banner() {
   return (
