@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "../App.jsx"; // ✅ correct, goes up to src/ then App.jsx
 
-import "./index.css";
+
 import { BrowserRouter } from "react-router-dom";
 
 // ✅ Correct named import
