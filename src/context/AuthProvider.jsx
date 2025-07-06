@@ -1,21 +1,18 @@
-import { createContext, useContext, useState } from "react";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.jsx";
+import "./index.css";
+import { BrowserRouter } from "react-router-dom";
 
-const AuthContext = createContext();
+// ✅ Correct named import
+import { AuthProvider } from "./context/AuthProvider.jsx";
 
-export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
-
-  const login = (userData) => setUser(userData);
-  const logout = () => setUser(null);
-
-  return (
-    <AuthContext.Provider value={{ user, login, logout }}>
-      {children}
-    </AuthContext.Provider>
-  );
-};
-
-// ✅ Exporting useAuth properly
-export const useAuth = () => {
-  return useContext(AuthContext);
-};
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <AuthProvider>
+        <App />
+      </AuthProvider>
+    </BrowserRouter>
+  </React.StrictMode>
+);
