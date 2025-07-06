@@ -1,6 +1,5 @@
 import React from "react";
 import Slider from "react-slick";
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -16,13 +15,13 @@ function Freebook() {
     },
     {
       id: 2,
-      title: "Advanced persistant hacking",
+      title: "Advanced persistent hacking",
       image: "/advance.png",
       link: "https://github.com/DoS0x99/cyber-security-books/blob/main/CyberSec%20In%20General/Advanced%20Persistent%20Threat%20Hacking.pdf",
     },
     {
       id: 3,
-      title: "Pentration testing Windows",
+      title: "Penetration testing Windows",
       image: "/pent.png",
       link: "https://github.com/DoS0x99/cyber-security-books/blob/main/CyberSec%20In%20General/Hands-On%20Penetration%20Testing%20on%20Windows.pdf",
     },
@@ -75,7 +74,7 @@ function Freebook() {
     <div className="max-w-screen-2xl container mx-auto md:px-20 px-4 mt-10">
       <div>
         <h1 className="font-semibold text-2xl pb-2">Free Books</h1>
-        <p className="text-grey-900">
+        <p className="text-gray-900 dark:text-gray-300">
           Start learning without limits. Explore our handpicked cybersecurity books — absolutely free, forever. No cost. No catch. Just pure knowledge to fuel your journey.
         </p>
       </div>
@@ -83,7 +82,7 @@ function Freebook() {
       <div className="mt-10">
         <Slider {...settings}>
           {book.map((item) => (
-            <Cards item={item} key={item.id} />
+            <Cards key={item.id} item={item} />
           ))}
         </Slider>
       </div>
