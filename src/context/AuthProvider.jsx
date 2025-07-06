@@ -1,19 +1,18 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "../App.jsx"; // ✅ correct, goes up to src/ then App.jsx
+import { createContext, useContext, useState } from "react";
 
+const AuthContext = createContext();
 
-import { BrowserRouter } from "react-router-dom";
+export const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
 
-// ✅ Correct named import
-import { AuthProvider } from "./context/AuthProvider.jsx";
+  const login = (userData) => setUser(userData);
+  const logout = () => setUser(null);
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <AuthProvider>
-        <App />
-      </AuthProvider>
-    </BrowserRouter>
-  </React.StrictMode>
-);
+  return (
+    <AuthContext.Provider value={{ user, login, logout }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
+
+export const useAuth = () => useContext(AuthContext);
