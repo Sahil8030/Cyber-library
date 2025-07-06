@@ -23,7 +23,7 @@ function Freebook() {
     {
       id: 3,
       title: "Pentration testing Windows",
-      image: "pent.png",
+      image: "/pent.png",
       link: "https://github.com/DoS0x99/cyber-security-books/blob/main/CyberSec%20In%20General/Hands-On%20Penetration%20Testing%20on%20Windows.pdf",
     },
     {
