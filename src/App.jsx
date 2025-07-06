@@ -3,6 +3,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import { Toaster, toast } from "react-hot-toast";
 import { useAuth } from "./context/AuthProvider";
 
+
 import Home from "./home/Home";
 import Signup from "./components/Signup";
 import PremiumB from "./PremiumB/PremiemBPage";
@@ -10,7 +11,8 @@ import Contact from "./components/Contact"; // using ./components
 import About from "./components/About";     // using ./components
 
 function App() {
-  const [authUser] = useAuth();
+  const { user: authUser } = useAuth(); // ✅ correctly gets user from context
+
 
   return (
     <div className="dark:bg-slate-900 dark:text-white">
