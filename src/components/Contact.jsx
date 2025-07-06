@@ -1,30 +1,27 @@
-
-
-
 import React from "react";
 
-function Cards({ item }) {
+function Contact() {
+  const goBack = () => {
+    window.history.back();
+  };
+
   return (
-    <div className="p-4">
-      <div className="bg-white shadow-md rounded-lg overflow-hidden">
-        <img
-          src={item.image || "/images/default.jpg"} // fallback image
-          alt={item.title}
-          className="w-full h-48 object-cover"
-        />
-        <div className="p-4">
-          <h2 className="font-semibold text-lg text-gray-800">{item.title}</h2>
-          <button
-            onClick={() => window.open(item.link || "#", "_blank")}
-            className="mt-4 inline-block px-4 py-2 bg-blue-600 text-white text-sm rounded hover:bg-blue-700"
-          >
-            Explore Now
-          </button>
-        </div>
-      </div>
+    <div className="max-w-md mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg text-center">
+      {/* Brand Info */}
+      <h1 className="text-2xl font-bold text-blue-600">Cyber Library</h1>
+      <p className="text-sm text-gray-500 mt-2">
+        A growing collection of trusted cybersecurity books for learners and professionals.
+      </p>
+
+      {/* Back Button */}
+      <button
+        onClick={goBack}
+        className="mt-6 text-blue-600 hover:underline text-sm"
+      >
+        ← Go Back
+      </button>
     </div>
   );
 }
 
-export default Cards;
-
+export default Contact;
