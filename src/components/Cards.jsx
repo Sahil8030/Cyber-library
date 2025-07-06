@@ -1,23 +1,22 @@
 import React from "react";
 
 function Cards({ item }) {
-  // 🛡️ Guard: If item is undefined, skip rendering
-  if (!item) return null;
-
-  const { image, title, link } = item;
-
   return (
     <div className="p-4">
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-md overflow-hidden">
         <img
-          src={image ?? "/fallback.png"} // ✅ fallback image if missing
-          alt={title ?? "Book cover"}
+          src={item?.image || "/fallback.png"} // ✅ Uses fallback
+          alt={item?.title || "Book cover"}
+          onError={(e) => {
+            e.target.onerror = null;
+            e.target.src = "/fallback.png"; // ✅ Shows fallback if image fails
+          }}
           className="w-full h-48 object-cover"
         />
         <div className="p-4">
-          <h2 className="font-semibold text-lg mb-2">{title}</h2>
+          <h2 className="font-semibold text-lg mb-2">{item?.title}</h2>
           <a
-            href={link ?? "#"}
+            href={item?.link}
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-600 hover:underline"
