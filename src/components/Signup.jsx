@@ -5,13 +5,13 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import toast from "react-hot-toast";
 
-// ✅ Import useAuth from context
+
 import { useAuth } from "../context/AuthProvider";
 
 function Signup() {
   const location = useLocation();
   const navigate = useNavigate();
-  const { login } = useAuth(); // ✅ use login method from context
+  const { login } = useAuth(); 
   const from = location.state?.from?.pathname || "/";
 
   const {
