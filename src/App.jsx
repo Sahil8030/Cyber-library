@@ -7,11 +7,11 @@ import { useAuth } from "./context/AuthProvider";
 import Home from "./home/Home";
 import Signup from "./components/Signup";
 import PremiumB from "./PremiumB/PremiemBPage";
-import Contact from "./components/Contact"; // using ./components
-import About from "./components/About";     // using ./components
+import Contact from "./components/Contact"; 
+import About from "./components/About";     
 
 function App() {
-  const { user: authUser } = useAuth(); // ✅ correctly gets user from context
+  const { user: authUser } = useAuth(); 
 
 
   return (
